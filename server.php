@@ -84,4 +84,50 @@ if (isset($_POST['login_user'])) {
   }
 }
 
+//add user
+if(isset($_POST['add_project'])){
+  $title = mysqli_real_escape_string($db, $_POST['title']);
+  $desc = mysqli_real_escape_string($db, $_POST['desc']);
+  $student = mysqli_real_escape_string($db, $_POST['student']);
+  $education = mysqli_real_escape_string($db, $_POST['education']);
+  $date1 = mysqli_real_escape_string($db, $_POST['date1']);
+  $date2 = mysqli_real_escape_string($db, $_POST['date2']);
+  $studentimg = mysqli_real_escape_string($db, $_POST['studentimg']);
+  $projectimg = mysqli_real_escape_string($db, $_POST['projectimg']);
+  if(empty($title)){
+    $array_push($errors, "Please fill in a title");
+  }
+  if(empty($desc)){
+    $array_push($errors, "Please fill in a description");
+  }
+  if(empty($student)){
+    $array_push($errors, "Please fill in a student");
+  }
+  if(empty($education)){
+    $array_push($errors, "Please fill in a opleiding");
+  }
+  if(empty($date1)){
+    $array_push($errors, "Please fill in a date1");
+  }
+  if(empty($date2)){
+    $array_push($errors, "Please fill in a date2");
+  }
+  if(empty($studentimg)){
+    $array_push($errors, "Please fill in a studentimg");
+  }
+  if(empty($projectimg)){
+    $array_push($errors, "Please fill in a projectimg");
+  }
+  if (count($errors) == 0) {
+    $query = "INSERT INTO projects (TITLE, DESCRIPTION, STUDENT, EDUCATION, STARTDATE, ENDDATE, STUDENTIMG, PROJECTIMG) VALUES ('$title', '$desc', '$student', '$education', '$date1', '$date2', '$studentimg', '$projectimg')";
+    $results = mysqli_query($db, $query);
+    if ($results) {
+      header('location: admin.php');
+    }else {
+      array_push($errors, "error");
+    }
+  }
+
+}
+
 ?>

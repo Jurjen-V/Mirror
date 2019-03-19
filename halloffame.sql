@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 19 mrt 2019 om 13:31
--- Serverversie: 10.1.38-MariaDB
--- PHP-versie: 7.3.2
+-- Gegenereerd op: 19 mrt 2019 om 15:22
+-- Serverversie: 10.1.26-MariaDB
+-- PHP-versie: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,54 +31,34 @@ SET time_zone = "+00:00";
 CREATE TABLE `projects` (
   `ID` int(11) NOT NULL,
   `TITLE` varchar(255) NOT NULL,
-  `DESC` varchar(255) NOT NULL,
+  `DESCRIPTION` varchar(255) NOT NULL,
   `STUDENT` varchar(255) NOT NULL,
   `EDUCATION` varchar(255) NOT NULL,
-  `STARTDATE` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `ENDDATE` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `STARTDATE` date NOT NULL,
+  `ENDDATE` date NOT NULL,
   `STUDENTIMG` varchar(255) NOT NULL,
   `PROJECTIMG` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'admin', 'admin@admin.nl', '21232f297a57a5a743894a0e4a801fc3');
 
 --
 -- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexen voor tabel `users`
+-- Indexen voor tabel `projects`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `projects`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT voor een tabel `users`
+-- AUTO_INCREMENT voor een tabel `projects`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `projects`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
