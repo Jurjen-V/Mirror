@@ -1,0 +1,13 @@
+body {
+    /* background-color: red; */
+}
+form {
+    display: none;
+}
+.logo {
+    position: fixed;
+    width: 20%;
+    max-width: 250px;
+    padding: 25px;
+    background-color: white;
+}

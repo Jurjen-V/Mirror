@@ -1,0 +1,48 @@
+body {
+    font-family: 'Muli', sans-serif;
+}
+header {
+    padding: 15px 10px;
+    width: calc(100% - 20px);
+    background-color: #005DA4;
+    height: 50px;
+}
+header nav a {
+    padding: 0px 10px;
+}
+header .wrapper {
+    width: 90%;
+    margin: 0px 5%;
+}
+header .wrapper .logo svg {
+    height: 50px;
+    float: left;
+    color: white;
+}
+header .wrapper nav {
+    height: 50px;
+    float: right;
+}
+header .wrapper nav a {
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+}
+main {
+    width: 90%;
+    margin: 25px 5%;
+}
+main table {
+    width: 100%;
+}
+main table tr th {
+    font-weight: bold;
+}
+main table tr td,
+main table tr th {
+    padding: 5px 10px;
+    text-align: left;
+}
+table, th, td {
+  border: 1px solid rgba(0,0,0,.2);
+}
