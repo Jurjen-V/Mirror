@@ -9,7 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-
     <header>
         <img class="logo" src="https://i.imgur.com/05a8QY5.png" alt="">
     </header>
@@ -24,6 +23,5 @@
             <button type="submit" class="btn" name="login_user">Login</button>
         </form>
     </main>
-
 </body>
 </html>
