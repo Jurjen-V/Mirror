@@ -10,6 +10,12 @@
   	unset($_SESSION['username']);
   	header("location: login.php");
   }
+  if (isset($_SESSION['login_user']) && (time() - $_SESSION['login_user'] > 1800)) {
+      // last request was more than 30 minutes ago
+      session_unset();     // unset $_SESSION variable for the run-time
+      session_destroy();   // destroy session data in storage
+  }
+  $_SESSION['login_user'] = time(); // update last activity time stamp
 include('server.php');
 require 'functions.php';
 ?>
