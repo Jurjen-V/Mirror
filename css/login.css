@@ -1,13 +1,54 @@
 body {
-    /* background-color: red; */
+    background-color: #f4f4f4;
+    font-family: 'Muli', sans-serif;
 }
-form {
-    display: none;
+header {
+    height: 160px;
+    width: 100%;
+    position: relative;
 }
 .logo {
-    position: fixed;
-    width: 20%;
-    max-width: 250px;
-    padding: 25px;
+    position: relative;
+    height: 120px;
+    padding: 20px;
+    margin: 0px 50px;
+}
+main {
+    height: calc(100% - 160px);
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+}
+main form {
+    max-width: 700px;
     background-color: white;
+    width: 300px;
+    padding: 20px 0px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 3px;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #bfbfbf;
+}
+main form h3 {
+    font-size: 20px;
+    margin: 12px 0px;
+    font-weight: bold;
+}
+main form input {
+    padding: 10px;
+    width: 250px;
+    margin: 10px 0px;
+    border-radius: 2px;
+    border: 1px solid #cecece;
+    outline: none;
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 700;
+}
+main form button.btn {
+    width: 272px;
+    padding: 10px;
+    margin: 10px 0px;
+    color: #022169;
 }
