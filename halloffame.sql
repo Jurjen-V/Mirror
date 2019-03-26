@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 21 mrt 2019 om 09:29
+-- Gegenereerd op: 26 mrt 2019 om 13:58
 -- Serverversie: 10.1.26-MariaDB
 -- PHP-versie: 7.1.8
 
@@ -45,8 +45,7 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`ID`, `TITLE`, `DESCRIPTION`, `STUDENT`, `EDUCATION`, `STARTDATE`, `ENDDATE`, `STUDENTIMG`, `PROJECTIMG`) VALUES
-(1, 'TEST', 'TEST', 'Jurjen', 'AO', '2019-04-11', '2019-05-11', 'boom.jpg', 'berg.jpg'),
-(2, 'Test', 'Test ', 'Jurjen', 'Tesst', '2019-03-21', '2019-03-26', 'bloem.jpg', 'boom.jpg');
+(9, 'Test', 'Test', 'Teset', 'Test', '2019-02-20', '2020-02-25', 'tijger.jpg', 'bloem.jpg');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -66,7 +65,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT voor een tabel `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

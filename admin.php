@@ -69,19 +69,16 @@ require 'functions.php';
             </tr>
        </table>
     </main>
-
   	<?php
     if (isset($_SESSION['success'])) :
       	echo $_SESSION['success'];
       	unset($_SESSION['success']);
     endif
     ?>
-
     <?php
     if (isset($_SESSION['username'])) :
         echo $_SESSION['username'];
     endif
     ?>
-
 </body>
 </html>
