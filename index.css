@@ -1,0 +1,112 @@
+/* body{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(30,50px);
+    grid-gap: 15px;
+
+  }
+
+  article{
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+
+  } */ 
+
+  header {
+    padding: 15px 10px;
+    width: calc(100% - 20px);
+    background-color: #005DA4;
+    height: 50px;
+}
+
+header nav a {
+    padding: 0px 10px;
+
+}
+header .wrapper {
+    width: 90%;
+    margin: 0px 5%;
+
+}
+
+header .wrapper .logo svg {
+    height: 50px;
+    float: left;
+    color: white;
+}
+
+header .wrapper nav {
+    height: 50px;
+    float: right;
+}
+header .wrapper nav a {
+    line-height: 50px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+#slides {
+    position: relative;
+    height: 400px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+img{
+    max-height:100%; 
+    max-width:100%;
+}
+
+.project{
+    width: 100%;
+    height: 100%;
+}
+
+.student{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
