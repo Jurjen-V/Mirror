@@ -50,17 +50,21 @@ require 'functions.php';
             </tr>
             <tr>
             	<?php
-               	while ($row = mysqli_fetch_array($result)) {?>
+               	while ($row = mysqli_fetch_array($result)) {
+               		$ID = $row['ID'];?>
                    <tr>
-                   <td><?php echo $row['TITLE'];?></td>
-                   <td><?php echo $row['STUDENT'];?></td>
-                   <td><?php echo $row['DESCRIPTION'];?></td>
-                   <td><?php echo $row['EDUCATION'];?></td>
-                   <td><?php echo $row['STARTDATE'];?></td>
-                   <td><?php echo $row['ENDDATE'];?></td>
-                   <td><?php echo $row['STUDENTIMG'];?></td>
-                   <td><?php echo $row['PROJECTIMG'];?></td>
-                   <td><?php actionButtons(); ?></td>
+                   <td><?= $row['TITLE'];?></td>
+                   <td><?= $row['STUDENT'];?></td>
+                   <td><?= $row['DESCRIPTION'];?></td>
+                   <td><?= $row['EDUCATION'];?></td>
+                   <td><?= $row['STARTDATE'];?></td>
+                   <td><?= $row['ENDDATE'];?></td>
+                   <td><?= $row['STUDENTIMG'];?></td>
+                   <td><?= $row['PROJECTIMG'];?></td>
+                   <td><div class="actions">
+				    	<a href="?DEL=1&ID=<?= $ID ?>"><i class="fas fa-trash-alt"></i></a>
+				        <a href="?EDIT=1&ID=<?= $ID ?>"><i class="fas fa-edit"></i></a>
+				    </div></td>
               	<?php  } ?>
             </tr>
        </table>

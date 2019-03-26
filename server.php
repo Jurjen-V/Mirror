@@ -120,4 +120,70 @@ if($host == 'localhost/php/mirror/admin.php')
   $select_project_query = "SELECT ID, TITLE, DESCRIPTION, STUDENT, EDUCATION, STARTDATE, ENDDATE, STUDENTIMG, PROJECTIMG FROM projects"; 
   $result = mysqli_query($server, $select_project_query);
 }
+if(isset($_GET['ID']) && isset($_GET['DEL'])){
+  $ID= $_GET['ID'];
+  $delete_project_query = "DELETE FROM projects WHERE ID = '$ID'"; 
+  $result_delete = mysqli_query($db, $delete_project_query);
+  header('location: admin.php');
+}
+if(isset($_GET['ID']) && isset($_GET['EDIT'])){
+  $ID= $_GET['ID'];
+  $select_project_query = "SELECT ID, TITLE, DESCRIPTION, STUDENT, EDUCATION, STARTDATE, ENDDATE, STUDENTIMG, PROJECTIMG FROM projects WHERE ID = '$ID'"; 
+  $result_edit = mysqli_query($db, $select_project_query);
+  while ($row = mysqli_fetch_array($result_edit)) {
+    $ID = $row['ID'];
+    $TITLE = $row['TITLE'];
+    $DESCRIPTION = $row['DESCRIPTION'];
+    $STUDENT = $row['STUDENT'];
+    $EDUCATION = $row['EDUCATION'];
+    $STARTDATE = $row['STARTDATE'];
+    $ENDDATE = $row['ENDDATE'];
+    $STUDENTIMG = $row['STUDENTIMG'];
+    $PROJECTIMG = $row['PROJECTIMG'];
+  }
+  header("location: edit.php?ID=$ID&TITLE=$TITLE&DESCRIPTION=$DESCRIPTION&STUDENT=$STUDENT&EDUCATION=$EDUCATION&STARTDATE=$STARTDATE&ENDDATE=$ENDDATE&STUDENTIMG=$STUDENTIMG&PROJECTIMG=$PROJECTIMG");
+}
+
+//change project
+
+if(isset($_POST['edit_project'])){
+  $title = mysqli_real_escape_string($db, $_POST['title']);
+  $desc = mysqli_real_escape_string($db, $_POST['desc']);
+  $student = mysqli_real_escape_string($db, $_POST['student']);
+  $education = mysqli_real_escape_string($db, $_POST['education']);
+  $date1 = mysqli_real_escape_string($db, $_POST['date1']);
+  $date2 = mysqli_real_escape_string($db, $_POST['date2']);
+  $studentimg = mysqli_real_escape_string($db, $_POST['studentimg']);
+  $projectimg = mysqli_real_escape_string($db, $_POST['projectimg']);
+  if(empty($title)){
+    array_push($errors, "Please fill in a title");
+  }
+  if(empty($desc)){
+    array_push($errors, "Please fill in a description");
+  }
+  if(empty($student)){
+    array_push($errors, "Please fill in a student");
+  }
+  if(empty($education)){
+    array_push($errors, "Please fill in a opleiding");
+  }
+  if(empty($date1)){
+    array_push($errors, "Please fill in a date1");
+  }
+  if(empty($date2)){
+    array_push($errors, "Please fill in a date2");
+  }
+  if(empty($studentimg)){
+    array_push($errors, "Please fill in a studentimg");
+  }
+  if(empty($projectimg)){
+    array_push($errors, "Please fill in a projectimg");
+  }
+  $ID = $_GET['ID'];
+  if (count($errors) == 0) {
+    $update_project_query = "UPDATE projects SET TITLE = '$title', DESCRIPTION = '$desc', STUDENT = '$student', EDUCATION= '$education', STARTDATE = '$date1', ENDDATE = '$date2', STUDENTIMG = '$studentimg', PROJECTIMG = '$projectimg' WHERE ID = '$ID';"; 
+    $result_edit = mysqli_query($db, $update_project_query);
+    header('location: admin.php');
+  }
+}
 ?>
